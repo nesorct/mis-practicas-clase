@@ -22,3 +22,12 @@ env/
 
 # Archivos de salida
 lista_alumnos_classroom.txt
+
+# Variables de entorno (contienen API keys y contraseñas)
+.env
+.env.local
+.env.production
+
+# Docker
+n8n-local-files/
+docker-compose.override.yml
