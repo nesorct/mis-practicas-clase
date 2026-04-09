@@ -93,7 +93,7 @@ Script de Python para obtener la lista de alumnos de Google Classroom y guardarl
 
 **Uso:**
 ```bash
-python classroom_students.py
+python herramientas-docentes/classroom_students.py
 ```
 
 **Requisitos:**
@@ -102,6 +102,45 @@ python classroom_students.py
 - Python 3.x con dependencias: `google-auth`, `google-auth-oauthlib`, `google-auth-httplib2`, `google-api-python-client`
 
 ⚠️ **Nota:** El archivo de credenciales NO está incluido en el repositorio por seguridad (ver `.gitignore`).
+
+---
+
+### 🤖 n8n - Automatización con IA Local
+
+Configuración completa de **n8n** (automatización de flujos de trabajo) con **Ollama** (IA local gratuita).
+
+**Estructura:**
+```
+herramientas-docentes/n8n/
+├── docker/                    # Configuración Docker
+│   ├── docker-compose-n8n-claude.yml
+│   ├── docker-compose-n8n-local-ollama.yml
+│   └── docker-compose-n8n-ollama.yml
+├── workflows/                 # Workflows de ejemplo
+│   ├── ollama-chat-ejemplo.json
+│   ├── enviar-correo-patricia.json
+│   ├── enviar-correo-patricia-v2.json
+│   └── credencial-ollama.json
+├── README-DOCKER-N8N.md       # Guía Docker
+├── README-OLLAMA.md           # Configuración Ollama
+└── README-OLLAMA-LOCAL-WINDOWS.md  # Guía Windows específica
+```
+
+**Características:**
+- ✅ Workflows de ejemplo para Ollama (qwen3.5, llama3, etc.)
+- ✅ Workflow de envío de emails con Gmail SMTP
+- ✅ Configuración Docker para Windows
+- ✅ Conexión a Ollama local (100% gratuita)
+
+**Inicio rápido:**
+```bash
+# Ver documentación
+cat herramientas-docentes/n8n/README-OLLAMA-LOCAL-WINDOWS.md
+
+# Iniciar n8n
+cd herramientas-docentes/n8n/docker
+docker-compose -f docker-compose-n8n-local-ollama.yml up -d
+```
 
 ## 📂 Prácticas de Alumnos
 

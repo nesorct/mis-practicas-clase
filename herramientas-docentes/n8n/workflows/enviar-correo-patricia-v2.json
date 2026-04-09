@@ -1,0 +1,55 @@
+{
+  "name": "Enviar Email a Patricia - Corregido",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger-1",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "fromEmail": "jaimeaniorte.garcia@gmail.com",
+        "toEmail": "patriciaramos1999@gmail.com",
+        "subject": "¡Un mensaje especial para ti!",
+        "text": "=Hola Patricia,\n\nQuería decirte que eres muy guapa.\n\nUn saludo cordial",
+        "options": {}
+      },
+      "id": "email-send-1",
+      "name": "Send Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        450,
+        300
+      ],
+      "credentials": {
+        "smtp": {
+          "id": "TU-ID-CREDENCIAL",
+          "name": "Gmail Personal"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
